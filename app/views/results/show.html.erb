@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @result.url %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @result.time %>
+</p>
+
+<p>
+  <b>Response time:</b>
+  <%= @result.response_time %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @result.code %>
+</p>
+
+<p>
+  <b>Data size:</b>
+  <%= @result.data_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>

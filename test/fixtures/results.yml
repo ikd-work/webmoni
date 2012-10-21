@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  time: 2012-10-21 22:03:55
+  response_time: 1
+  code: 1
+  data_size: 1
+
+two:
+  url: MyString
+  time: 2012-10-21 22:03:55
+  response_time: 1
+  code: 1
+  data_size: 1
