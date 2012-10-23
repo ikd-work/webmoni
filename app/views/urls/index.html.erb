@@ -1,9 +1,12 @@
-<h1>Listing urls</h1>
+<div class="header">
+    <h1>Listing urls</h1>
+</div>
 
-<table>
+<div class="block">
+<a href="#" class="block-heading" data-toggle="collapse">URLs</a>
+<table class="table">
   <tr>
     <th>Url</th>
-    <th>Userid</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +15,6 @@
 <% @urls.each do |url| %>
   <tr>
     <td><%= url.url %></td>
-    <td><%= url.userid %></td>
     <td><%= link_to 'Show', url %></td>
     <td><%= link_to 'Edit', edit_url_path(url) %></td>
     <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,3 +25,4 @@
 <br />
 
 <%= link_to 'New Url', new_url_path %>
+</div>

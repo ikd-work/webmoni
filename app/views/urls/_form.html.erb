@@ -5,21 +5,23 @@
 
       <ul>
       <% @url.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <a href=# class="block-heading" data-toggle="collapse"><li><%= msg %></li></a>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
+  <div class="block">
+     <div class="field">
+        <a href=# class="block-heading" data-toggle="collapse"><%= f.label :url %></a><br />
+        <%= f.text_field :url %>
+     </div>
 <!--  <div class="field">
     <%= f.label :userid %><br />
     <%= f.number_field :userid %>
   </div> -->
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>
