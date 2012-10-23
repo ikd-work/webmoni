@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021133923) do
+ActiveRecord::Schema.define(:version => 20121023010319) do
 
   create_table "results", :force => true do |t|
     t.string   "url"
     t.datetime "time"
-    t.integer  "response_time"
+    t.integer  "response_time_old"
     t.integer  "code"
     t.integer  "data_size"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.float    "response_time"
   end
 
   create_table "urls", :force => true do |t|
