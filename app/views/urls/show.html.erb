@@ -5,11 +5,14 @@
 
 <div class="block">
     <div class="block-heading">
+        <% if @result %>
         <span class="pull-right">last check time:<%= @result.time %></span>
+        <% end %>
         <a href="#" data-toggle="collapse">Latest Status (<%= @url.url %>)</a>
     </div>
     <div id="page-stats" class="block-body collapse in">
         <div class="stat-widget-container">
+                <% if @result %>
             <div class="stat-widget">
                 <div class="stat-button">
                     <% if @result.code >= 400 %>
@@ -32,6 +35,9 @@
                     <p class="detail">Data Size</p>
                 </div>
             </div>
+                <% else %>
+                    <p>No Data</p>
+                <% end %>
         </div>
     </div>
 <%= link_to 'Edit', edit_url_path(@url) %> |
