@@ -14,7 +14,10 @@ class UrlsController < ApplicationController
   # GET /urls/1.json
   def show
     @url = Url.find(params[:id])
-
+    @result = Result.find_by_url(@url.url, :order => 'created_at desc')
+    p '----------'
+    p @result
+    p '----------'
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @url }

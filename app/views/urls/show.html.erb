@@ -1,12 +1,41 @@
 <div class="header">
     <p id="notice"><%= notice %></p>
+    <h1>Monitoring Information</h1>
 </div>
 
-<p>
-  <b>Url:</b>
-  <%= @url.url %>
-</p>
-
-
+<div class="block">
+    <div class="block-heading">
+        <span class="pull-right">last check time:<%= @result.time %></span>
+        <a href="#" data-toggle="collapse">Latest Status (<%= @url.url %>)</a>
+    </div>
+    <div id="page-stats" class="block-body collapse in">
+        <div class="stat-widget-container">
+            <div class="stat-widget">
+                <div class="stat-button">
+                    <% if @result.code >= 400 %>
+                        <p class="title"><span style="color:#F44"><%= @result.code %></span></p>
+                    <% else %>
+                        <p class="title"><span style="color:#4F4"><%= @result.code %></span></p>
+                    <% end %>
+                    <p class="detail">Response Code</p>
+                </div>
+            </div>
+            <div class="stat-widget">
+                <div class="stat-button">
+                    <p class="title"><%= @result.response_time %> sec</p>
+                    <p class="detail">Response Time</p>
+                </div>
+            </div>
+            <div class="stat-widget">
+                <div class="stat-button">
+                    <p class="title"><%= @result.data_size %> bytes</p>
+                    <p class="detail">Data Size</p>
+                </div>
+            </div>
+        </div>
+    </div>
 <%= link_to 'Edit', edit_url_path(@url) %> |
 <%= link_to 'Back', urls_path %>
+</div>
+
+

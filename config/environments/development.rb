@@ -34,4 +34,8 @@ Webmoni::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # set time zone
+  config.time_zone = 'Tokyo'
+  #ENV['HTTP_PROXY'] = ''
 end
